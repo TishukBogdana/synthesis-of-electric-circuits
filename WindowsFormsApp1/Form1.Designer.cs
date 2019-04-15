@@ -29,123 +29,124 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.denominator = new System.Windows.Forms.TextBox();
+            this.numerator = new System.Windows.Forms.TextBox();
+            this.RLC = new System.Windows.Forms.RadioButton();
+            this.RC = new System.Windows.Forms.RadioButton();
+            this.RL = new System.Windows.Forms.RadioButton();
+            this.LC = new System.Windows.Forms.RadioButton();
+            this.maxNum = new System.Windows.Forms.TextBox();
+            this.degree = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.func = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Start = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // denominator
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(27, 460);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(537, 32);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "denominator";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.denominator.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.denominator.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.denominator.Location = new System.Drawing.Point(27, 460);
+            this.denominator.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.denominator.Name = "denominator";
+            this.denominator.Size = new System.Drawing.Size(537, 32);
+            this.denominator.TabIndex = 0;
+            this.denominator.Text = "denominator";
+            this.denominator.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // numerator
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Location = new System.Drawing.Point(27, 416);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(537, 32);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "numerator";
+            this.numerator.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numerator.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.numerator.Location = new System.Drawing.Point(27, 416);
+            this.numerator.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.numerator.Name = "numerator";
+            this.numerator.Size = new System.Drawing.Size(537, 32);
+            this.numerator.TabIndex = 1;
+            this.numerator.Text = "numerator";
             // 
-            // radioButton1
+            // RLC
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton1.Location = new System.Drawing.Point(378, 76);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 26);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "RLC";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.RLC.AutoSize = true;
+            this.RLC.BackColor = System.Drawing.Color.Transparent;
+            this.RLC.Checked = true;
+            this.RLC.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RLC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RLC.Location = new System.Drawing.Point(378, 76);
+            this.RLC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.RLC.Name = "RLC";
+            this.RLC.Size = new System.Drawing.Size(67, 26);
+            this.RLC.TabIndex = 2;
+            this.RLC.TabStop = true;
+            this.RLC.Text = "RLC";
+            this.RLC.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // RC
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton2.Location = new System.Drawing.Point(378, 121);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(56, 26);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.Text = "RC";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.RC.AutoSize = true;
+            this.RC.BackColor = System.Drawing.Color.Transparent;
+            this.RC.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RC.Location = new System.Drawing.Point(378, 121);
+            this.RC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.RC.Name = "RC";
+            this.RC.Size = new System.Drawing.Size(56, 26);
+            this.RC.TabIndex = 3;
+            this.RC.Text = "RC";
+            this.RC.UseVisualStyleBackColor = false;
             // 
-            // radioButton3
+            // RL
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton3.Location = new System.Drawing.Point(378, 164);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 26);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.Text = "RL";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.RL.AutoSize = true;
+            this.RL.BackColor = System.Drawing.Color.Transparent;
+            this.RL.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RL.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RL.Location = new System.Drawing.Point(378, 164);
+            this.RL.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.RL.Name = "RL";
+            this.RL.Size = new System.Drawing.Size(53, 26);
+            this.RL.TabIndex = 4;
+            this.RL.Text = "RL";
+            this.RL.UseVisualStyleBackColor = false;
             // 
-            // radioButton4
+            // LC
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton4.Location = new System.Drawing.Point(378, 209);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(53, 26);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.Text = "LC";
-            this.radioButton4.UseVisualStyleBackColor = false;
+            this.LC.AutoSize = true;
+            this.LC.BackColor = System.Drawing.Color.Transparent;
+            this.LC.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LC.Location = new System.Drawing.Point(378, 209);
+            this.LC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.LC.Name = "LC";
+            this.LC.Size = new System.Drawing.Size(53, 26);
+            this.LC.TabIndex = 5;
+            this.LC.Text = "LC";
+            this.LC.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // maxNum
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(37, 102);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(129, 32);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.maxNum.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maxNum.ForeColor = System.Drawing.Color.Black;
+            this.maxNum.Location = new System.Drawing.Point(37, 102);
+            this.maxNum.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.maxNum.Name = "maxNum";
+            this.maxNum.Size = new System.Drawing.Size(129, 32);
+            this.maxNum.TabIndex = 7;
+            this.maxNum.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox3
+            // degree
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(37, 203);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(129, 32);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.UseWaitCursor = true;
+            this.degree.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.degree.ForeColor = System.Drawing.Color.Black;
+            this.degree.Location = new System.Drawing.Point(37, 203);
+            this.degree.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.degree.Name = "degree";
+            this.degree.Size = new System.Drawing.Size(129, 32);
+            this.degree.TabIndex = 8;
+            this.degree.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -173,18 +174,18 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "The degree of polynimial";
             // 
-            // comboBox1
+            // func
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.func.FormattingEnabled = true;
+            this.func.Items.AddRange(new object[] {
             "U(p)",
             "I(p)",
             "K(p) -I2(p)/I1(p)",
             "K(p) - U2(p)/U1(p)"});
-            this.comboBox1.Location = new System.Drawing.Point(36, 319);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
-            this.comboBox1.TabIndex = 11;
+            this.func.Location = new System.Drawing.Point(36, 319);
+            this.func.Name = "func";
+            this.func.Size = new System.Drawing.Size(121, 33);
+            this.func.TabIndex = 11;
             // 
             // label3
             // 
@@ -210,6 +211,15 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Polynimial";
             // 
+            // Start
+            // 
+            this.Start.Location = new System.Drawing.Point(221, 511);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(81, 40);
+            this.Start.TabIndex = 14;
+            this.Start.Text = "Start";
+            this.Start.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -217,19 +227,20 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(684, 661);
+            this.Controls.Add(this.Start);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.func);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.degree);
+            this.Controls.Add(this.maxNum);
+            this.Controls.Add(this.LC);
+            this.Controls.Add(this.RL);
+            this.Controls.Add(this.RC);
+            this.Controls.Add(this.RLC);
+            this.Controls.Add(this.numerator);
+            this.Controls.Add(this.denominator);
             this.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Form1";
@@ -242,19 +253,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox denominator;
+        private System.Windows.Forms.TextBox numerator;
+        private System.Windows.Forms.RadioButton RLC;
+        private System.Windows.Forms.RadioButton RC;
+        private System.Windows.Forms.RadioButton RL;
+        private System.Windows.Forms.RadioButton LC;
+        private System.Windows.Forms.TextBox maxNum;
+        private System.Windows.Forms.TextBox degree;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox func;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Start;
     }
+
 }
 
