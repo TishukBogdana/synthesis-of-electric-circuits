@@ -170,9 +170,9 @@
             this.label2.Location = new System.Drawing.Point(32, 181);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 22);
+            this.label2.Size = new System.Drawing.Size(226, 22);
             this.label2.TabIndex = 10;
-            this.label2.Text = "The degree of polynimial";
+            this.label2.Text = "The degree of polynomial";
             // 
             // func
             // 
@@ -207,9 +207,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(27, 385);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 22);
+            this.label4.Size = new System.Drawing.Size(102, 22);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Polynimial";
+            this.label4.Text = "Polynomial";
             // 
             // Start
             // 
@@ -244,7 +244,7 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Form1";
-            this.Text = "sintes";
+            this.Text = "synthesis";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
