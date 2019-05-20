@@ -14,9 +14,11 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            SpiceParser parser = new SpiceParser();
+            List < Record > circuit = parser.parseNetList("K:\\ifmo\\3_course\\netlists\\netlist1");
+            //Application.EnableVisualStyles();
+           // Application.SetCompatibleTextRenderingDefault(false);
+           // Application.Run(new Form1());
         }
     }
 }
