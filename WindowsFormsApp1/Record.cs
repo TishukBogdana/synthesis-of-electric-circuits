@@ -9,11 +9,12 @@ namespace WindowsFormsApp1
     // Класс, в котором хранятся сведения  об элементах , то есть объектное представление строки netlist
     class Record
     {
+
         private string name;
-        private int[] nodes =  new int[4] { -1,-1,-1,-1};
-   
+        private int[] nodes = new int[4] { -1, -1, -1, -1 };
+
         private int nominal;
- 
+
         /* Если двухполюсник, то node[2] и node[3] устанавливаются -1
         */
         public Record() { }
@@ -21,7 +22,7 @@ namespace WindowsFormsApp1
         {
             this.name = name;
             this.nodes = nodes;
-            this.nominal = nominal;       
+            this.nominal = nominal;
         }
         // getters and setters to observe incapsulation
         public void setName(string name)
@@ -55,6 +56,6 @@ namespace WindowsFormsApp1
         {
             return nominal;
         }
-        
+
     }
 }
