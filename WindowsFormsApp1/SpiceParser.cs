@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             for (int i = 1; i < allLines.Length - 2; i++)
             {
                 string[] words = allLines[i].Split(new char[] { ' ', '\t' });
-                int[] nodes = new int[4];
+                int[] nodes = new int[4] { -1, -1, -1, -1 };
                 int nominal = -1;
                 if ((words[0].StartsWith("K")) || (words[0].StartsWith("H")) || (words[0].StartsWith("G")) || (words[0].StartsWith("B")))
                 {
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
                     {
                         try
                         {
-                            nodes[j] = Int32.Parse(words[j + 1].Remove(0, 1));
+                            nodes[j] = Int32.Parse(words[j + 1].Replace("N", ""));
                         }
                         catch
                         {
@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
                     {
                         try
                         {
-                            nodes[j] = Int32.Parse(words[j + 1].Remove(0, 1));
+                            nodes[j] = Int32.Parse(words[j + 1].Replace("N", ""));
                         }
                         catch
                         {
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                     {
                         try
                         {
-                            nodes[j] = Int32.Parse(words[j + 1].Remove(0, 1));
+                            nodes[j] = Int32.Parse(words[j + 1].Replace("N", ""));
                         }
                         catch
                         {
