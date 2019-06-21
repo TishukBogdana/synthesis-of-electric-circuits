@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circuit.cs" />
+    <Compile Include="Adder.cs" />
+    <Compile Include="CircuitTransformator.cs" />
     <Compile Include="Record.cs" />
     <Compile Include="SpiceParser.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="TransformedCircuit.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
