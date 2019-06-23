@@ -8,17 +8,62 @@ namespace WindowsFormsApp1
 {
     class CircuitTransformator
     {
-        private 
+        
         public static TransformedCircuit transform(List <Record> testcircuit)
         {
             TransformedCircuit tCir = new TransformedCircuit();
+            List<SimplifiedCircuit> par = findParallelSubcir(testcircuit);
+            List<int[]> parNodes = new List<int[]>();
+            List<int> serialNodes = Utils.getSerialNodes(testcircuit);
+            List<Record> single = new List<Record>();
+            tCir.setParallel(par);
+            tCir.setSerial(toSimplifiedCir(findSerialSubcir(testcircuit)));
+            for( int i =0; i < par.Count; i++ )
+            {
+                int[] nodes = par.ElementAt(i).initialNodes.ToArray();
+                parNodes.Add(nodes);            
+            }
+            for(int i = 0; i < testcircuit.Count; i++)
+            {
+                int[] nodes = testcircuit.ElementAt(i).getNodes();
+                if( (!serialNodes.Contains(nodes[0])) && (!serialNodes.Contains(nodes[1])) && (!Utils.checkNodes(parNodes, nodes[0],nodes[1])) )
+                {
+                    single.Add(testcircuit.ElementAt(i));  
+                }
+            }
+            tCir.setSingle(single);
             return tCir;
         }
-
-        /* public static List<Record>   deTransform(TransformedCircuit trCircuit)
+        // now freature is unimplemented.
+         public static List<Record>   deTransform(TransformedCircuit trCircuit, bool mix)
          {
-
-         }*/
+            List<Record> detransformed = trCircuit.getSingle().GetRange(0, trCircuit.getSingle().Count -1);
+            for(int i = 0;  i < trCircuit.getParallel().Count; i++)
+            {
+                int[] nodes = trCircuit.getParallel().ElementAt(i).initialNodes.ToArray();
+                List<string> names = trCircuit.getParallel().ElementAt(i).elements;
+                for (int j = 0; j < names. Count; j++)
+                {
+                    Record newParallel = new Record(names.ElementAt(j), nodes, 1);
+                    detransformed.Add(newParallel);
+                }
+            }
+            if(!mix)
+            {
+                for (int i =0; i< trCircuit.getSerial().Count; i++)
+                {
+                    List<int> sNodes = trCircuit.getSerial().ElementAt(i).initialNodes;
+                    List<string> names = trCircuit.getSerial().ElementAt(i).elements;
+                    for (int j = 0; j < names.Count ; j++)
+                    {
+                        int[] nodes = { sNodes.ElementAt(j), sNodes.ElementAt(j + 1) };
+                        Record newSer = new Record(names.ElementAt(j), nodes, 1);
+                        detransformed.Add(newSer);
+                    }
+                }
+            }
+            return detransformed;
+        }
 
         /* This method finds sequential subcircuits in circuit.
          * By the 1_st step it is neccessare to find sequential nodes: nodes, where connected only 2 elements
@@ -95,22 +140,13 @@ namespace WindowsFormsApp1
          * If this sublist was found, that means it is parallel subcircuit.
          * Then, struct SimplifiedCircuit is made from this 
          */
-        public List <SimplifiedCircuit> findParallelSubcir(List<Record> testcircuit)
+        public static List<SimplifiedCircuit> findParallelSubcir(List<Record> testcircuit)
         {
-            int n_max = Utils.Max_nodes(testcircuit);
-            int k = 0;
-            List<int> serial = Utils.getSerialNodes(testcircuit);
+            
             List<SimplifiedCircuit> parallelCirs = new List<SimplifiedCircuit>();
-            int[] notSerial = new int[n_max-serial.Count];
+            int[] notSerial = Utils.getNotSerialNodes(testcircuit);
             List<List<Record>> byNodes = new List<List<Record>>();
-            for (int i = 1; i <= n_max; i++)  // get an array of not sequential nodes
-            {
-                if (!serial.Contains(i))
-                {
-                    notSerial[k] = i;
-                    k++;
-                }
-            }
+           
 
             for(int i = 0; i < notSerial.Length; i++)
             {
@@ -141,7 +177,7 @@ namespace WindowsFormsApp1
             return parallelCirs;
         }
 
-        public List <SimplifiedCircuit> toSimplifiedCir(List<List<Record>> cirlist) //transforms to List<list<Record>> to List <SimplifiedCircuit>
+        public static List <SimplifiedCircuit> toSimplifiedCir(List<List<Record>> cirlist) //transforms to List<list<Record>> to List <SimplifiedCircuit>
         {
             List<SimplifiedCircuit> simplCirList = new List<SimplifiedCircuit>();
             for( int i = 0; i < cirlist.Count; i++)
@@ -165,6 +201,7 @@ namespace WindowsFormsApp1
 
             return simplCirList;
         }
+
 
         public static List<Record> getElementsByNode(List<Record> testcircuit, int num) //finds elements, connected to concrete node
         {

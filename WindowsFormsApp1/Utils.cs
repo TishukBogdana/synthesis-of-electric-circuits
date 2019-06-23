@@ -123,10 +123,10 @@ namespace WindowsFormsApp1
             return unconected;
         }
 
-        public static List<int> getSerialNodes(List <Record> testcircuit)
+        public static List<int> getSerialNodes(List<Record> testcircuit)
         {
-            int[] counts = nodesCount(testcircuit);
-            int n_max = Max_nodes(testcircuit);
+            int[] counts = Utils.nodesCount(testcircuit);
+            int n_max = Utils.Max_nodes(testcircuit);
             List<int> serial = new List<int>();
             for (int i = 0; i < n_max; i++)
             {
@@ -136,6 +136,23 @@ namespace WindowsFormsApp1
                 }
             }
             return serial;
+        }
+
+        public static int[] getNotSerialNodes(List<Record> testcircuit)
+        {
+            int n_max = Utils.Max_nodes(testcircuit);
+            int k = 0;
+            List<int> serial = getSerialNodes(testcircuit);
+            int[] notSerial = new int[n_max - serial.Count];
+            for (int i = 1; i <= n_max; i++)  // get an array of not sequential nodes
+            {
+                if (!serial.Contains(i))
+                {
+                    notSerial[k] = i;
+                    k++;
+                }
+            }
+            return notSerial;
         }
 
         public static int[] nodesCount(List<Record> testcircuit)// возвращает массив в котором для каждого узла посчитано количество подключеных в него компанентов
