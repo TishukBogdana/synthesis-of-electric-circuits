@@ -55,7 +55,8 @@ namespace WindowsFormsApp1
             return n_max;
         }
 
-        
+  
+
         public static List<int[]> getNullorNodes(List<Record> testcircuit) //возвращает пары узлов, в которых подключенны элементы нуллора
         {
             List<int[]> exceptionNodes = new List<int[]>();

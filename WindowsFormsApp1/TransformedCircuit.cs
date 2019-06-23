@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    struct SimpifiedCircuit
+    struct SimplifiedCircuit
     {
-        List<string> elements;
-        int[] initialNodes;
+        public List<string> elements;
+        public List<int> initialNodes;
     }
     class TransformedCircuit
     {
         private List<Record> single = new List<Record>();
-        private List<SimpifiedCircuit> serial = new List<SimpifiedCircuit>();
-        private List<SimpifiedCircuit> parallel = new List<SimpifiedCircuit>();
+        private List<SimplifiedCircuit> serial = new List<SimplifiedCircuit>();
+        private List<SimplifiedCircuit> parallel = new List<SimplifiedCircuit>();
         private TransformedCircuit subcir;
 
         public TransformedCircuit() { }
-        public TransformedCircuit(List<Record> single, List<SimpifiedCircuit> ser, List <SimpifiedCircuit> parallel, TransformedCircuit subcir)
+        public TransformedCircuit(List<Record> single, List<SimplifiedCircuit> ser, List <SimplifiedCircuit> parallel, TransformedCircuit subcir)
         {
             this.single = single;
             this.serial = ser;
@@ -32,12 +32,12 @@ namespace WindowsFormsApp1
             return single;
         }
 
-        public List<SimpifiedCircuit> getSerial()
+        public List<SimplifiedCircuit> getSerial()
         {
             return serial;
         }
 
-        public List<SimpifiedCircuit> getParallel()
+        public List<SimplifiedCircuit> getParallel()
         {
             return parallel;
         }
@@ -52,12 +52,12 @@ namespace WindowsFormsApp1
             this.single = single;
         }
 
-        public void setSerial(List<SimpifiedCircuit> serial)
+        public void setSerial(List<SimplifiedCircuit> serial)
         {
             this.serial = serial;
         }
 
-        public void setParallel(List<SimpifiedCircuit> parallel )
+        public void setParallel(List<SimplifiedCircuit> parallel )
         {
            this.parallel =  parallel;
         }
